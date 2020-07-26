@@ -2,14 +2,13 @@
 ## CS50W Project 1: wiki 
 #### for more info [course | CS50W | edx](https://courses.edx.org/courses/course-v1:HarvardX+CS50W+Web/course/)
 
-#### Use the app on [Heroku](https://web-development-python-js.herokuapp.com/)
+#### Use the app on [Heroku](https://wi-ki.herokuapp.com/)
 
 #### Objective
 * Become more comfortable with Python.
-* Gain experience with Flask.
-* Learn to use SQL to interact with databases
+* Gain experience with Django.
 
-#### Overview
+#### Background
 
 * Users will be able to register and then log in using their username and password. 
 * They will be able to search for books, leave reviews for individual books, and see the reviews made by other people. 
