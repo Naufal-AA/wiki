@@ -4,58 +4,73 @@
 
 #### Use the app on [Heroku](https://wi-ki.herokuapp.com/)
 
-#### Objective
+### Objective
+
 * Become more comfortable with Python.
 * Gain experience with Django.
 
-#### Background
+### Background
 
-* Users will be able to register and then log in using their username and password. 
-* They will be able to search for books, leave reviews for individual books, and see the reviews made by other people. 
-* use the a third-party API by **[Goodreads](https://www.goodreads.com/api)**, another book review website, to pull in ratings from a broader audience. 
-* Finally, users will be able to query for book details and book reviews programmatically via your website’s API.
+[Wikipedia](https://www.wikipedia.org/) is a free online encyclopedia that consists of a number of encyclopedia entries on various topics.
+Each encyclopedia entry can be viewed by visiting that entry’s page. 
+By having one Markdown file represent each encyclopedia entry, we can make our entries more human-friendly to write and edit. When a user
+views our encyclopedia entry, though, we’ll need to convert that Markdown into HTML before displaying it to the user.
 
-#### Requirements
-* SQL (PostgreSQL)
-  * <img src="https://www.postgresql.org/media/img/about/press/elephant.png" width="20" height="20" valign="middle"> [PostgreSQL](https://www.postgresql.org/download/) (Locally)
-  * <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/04/1461122387heroku-logo.jpg" width="22" height="25" valign="middle"> [Heroku](https://www.heroku.com/) (Online web hosting service)
-    * <img src="https://jay.holtslander.ca/img/svg/skills/adminer-logo.svg" width="42" height="29" valign="middle"> [Adminer](https://www.heroku.com/) (for accessing Database)
- * Python and FLask
-    * <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/600px-Python-logo-notext.svg.png" width="20" height="20" valign="middle"> [Python](https://www.python.org/downloads/)
-    * <img src="https://banner2.cleanpng.com/20190124/rs/kisspng-python-selenium-programming-language-computer-icon-pip-5c4a4a7ca92d33.171618491548372604693.jpg" width="27" height="21" valign="middle"> [pip](https://pip.pypa.io/en/stable/installing/) (install it)
+### Specification
 
-## :gear: CMD Terminal
+* **Entry Page:** Visiting /wiki/TITLE, where TITLE is the title of an encyclopedia entry, should render a page that displays the contents of that encyclopedia entry.
+If an entry is requested that does not exist, the user should be presented with an error page indicating that their requested page was not found.
+If the entry does exist, the user should be presented with a page that displays the content of the entry. The title of the page should include the name of the entry.
+
+* **Index Page:** Update index.html such that, instead of merely listing the names of all pages in the encyclopedia, user can click on any entry name to be taken directly to that entry page.
+
+* **Search:** Allow the user to type a query into the search box in the sidebar to search for an encyclopedia entry.
+If the query matches the name of an encyclopedia entry, the user should be redirected to that entry’s page.
+If the query does not match the name of an encyclopedia entry, the user should instead be taken to a search results page that displays a list of all encyclopedia entries that have the query as a substring.
+Clicking on any of the entry names on the search results page should take the user to that entry’s page.
+
+* **New Page:** Clicking “Create New Page” in the sidebar should take the user to a page where they can create a new encyclopedia entry.
+Users should be able to enter a title for the page and, in a textarea, should be able to enter the Markdown content for the page.
+Users should be able to click a button to save their new page.
+When the page is saved, if an encyclopedia entry already exists with the provided title, the user should be presented with an error message.
+Otherwise, the encyclopedia entry should be saved to disk, and the user should be taken to the new entry’s page.
+
+* **Edit Page:** On each entry page, the user should be able to click a link to be taken to a page where the user can edit that entry’s Markdown content in a textarea.
+The textarea should be pre-populated with the existing Markdown content of the page. (i.e., the existing content should be the initial value of the textarea).
+The user should be able to click a button to save the changes made to the entry.
+Once the entry is saved, the user should be redirected back to that entry’s page.
+
+* **Random Page:** Clicking “Random Page” in the sidebar should take user to a random encyclopedia entry.
+
+* **Markdown to HTML Conversion:** On each entry’s page, any Markdown content in the entry file should be converted to HTML before being displayed to the user. 
+
+
+### Requirements
+* <img src="https://avatars1.githubusercontent.com/u/27804?s=400&v=4" width="25" valign="middle"> Django
+
+### :gear: Terminal 
 
 ```cmd
-# Navigate into project1 location 
-# Git Cloning
-> git clone https://github.com/Naufal-AA/cs50-project1.git
-#change directory
-> cd cs50-project1
->git add . 
->git commit -m "committed"
->git push
-
 # Install necessary packages
-> pip3 install -r requirements.txt
+> pip3 install Django==3.0.8
+> pip3 install markdown2
 
-# Set the environment variable
-> set FLASK_APP = application.py
-> set FLASK_DEBUG = 1
-> set DATABASE_URL = URL of DATABASE
-> set GOODREADS_KEY = Goodreads API Key
+#create a project 
+> django-admin startproject wiki
 
-#import sql query and insert book details
->python import.py
+#Create app in project in wiki
+> python manage.py startapp encyclopedia
 
-#run flask
->flask run
+#make migration 
+> python manage.py migrate
+
+#run Program
+> python manage.py runserver 
 ```
 
-## DB Schema
-![DB](https://i.ibb.co/0tSXJ82/dbschema.png)
+# Wiki
+<img src="https://i.ibb.co/KsfDyJR/1.png" width="450" valign="abs-middle">    <img src="https://i.ibb.co/Xt1F0ft/2.png" width="450" valign="abs-middle">
+
+<img src="https://i.ibb.co/2kSHtWw/3.png" width="450" valign="abs-middle">    <img src="https://i.ibb.co/VJSNDws/4.png" width="450" valign="abs-middle">
 
 
-# Thank you kindly
-* [Goodreads API](https://www.goodreads.com/api)
-* [Open Library Covers API](http://covers.openlibrary.org/) (for Collecting Book Cover)
