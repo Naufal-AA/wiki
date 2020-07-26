@@ -70,7 +70,9 @@ Once the entry is saved, the user should be redirected back to that entry’s pa
 
 # Wiki
 
- <img src="https://i.ibb.co/KsfDyJR/1.png" width="450" valign="abs-middle">      | <img src="https://i.ibb.co/Xt1F0ft/2.png" width="450" valign="abs-middle">   
- :---        |          ---: 
- <img src="https://i.ibb.co/2kSHtWw/3.png" width="450" valign="abs-middle">      | <img src="https://i.ibb.co/VJSNDws/4.png" width="450" valign="abs-middle">   
+ <img src="https://i.ibb.co/KsfDyJR/1.png" width="450" valign="abs-middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.ibb.co/Xt1F0ft/2.png" width="450" valign="abs-middle">   
+ ------------------------
+ 
+ <img src="https://i.ibb.co/2kSHtWw/3.png" width="450" valign="abs-middle">&nbsp;&nbsp;&nbsp;<img src="https://i.ibb.co/VJSNDws/4.png" width="450" valign="abs-middle"> 
+ ===============
 
