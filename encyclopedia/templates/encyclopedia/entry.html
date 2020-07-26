@@ -1,0 +1,61 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {% if mode %}
+        Edit {{title}}
+    {% else %}
+        New Item
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    
+
+    {% if mode %}
+        {% if message %}
+        <div class="alert alert-danger alert-dismissible text-center" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+              {{message}}
+        </div>
+
+        <div style="height: 180px;padding:80px;" class="alert alert-secondary alert-dismissible text-center" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              Create the page <a href="{% url 'new_page' %}">{{title}} </a> on wiki
+        </div>
+
+        {% else %}
+            <h1>Edit {{title}}</h1>
+        {% endif %}
+         
+
+    {% else %}
+        <h1>create your wiki</h1>
+        
+        {% if message %}
+        <div class="alert alert-danger alert-dismissible text-center" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+              {{message}}
+        </div>
+
+        {% endif %}
+    {% endif %}    
+    
+    
+        <div class="form-group">
+            <form action="{% url 'new_page' %}" method="post">
+                {% csrf_token %}
+                {{ form }}
+                {% if mode %}
+                    {% if not message %}
+                        <input type = submit style="margin:10px;width:150px;">
+                    {% endif %}
+                {% else %}
+                    <input type = submit style="margin:10px;width:150px;">
+                {% endif %} 
+            </form>
+        </div>
+   
+
+{% endblock %}
