@@ -3,6 +3,7 @@
 #### for more info [course | CS50W | edx](https://courses.edx.org/courses/course-v1:HarvardX+CS50W+Web/course/)
 
 #### Use the app on [Heroku](https://wi-ki.herokuapp.com/)
+#### Watch on   <img src="https://i.pinimg.com/originals/31/23/9a/31239a2f70e4f8e4e3263fafb00ace1c.png" width="20" height="20" valign="middle"> [Youtube](https://www.youtube.com/watch?v=oNax19v8Ghk)
 
 ### Objective
 
